@@ -1,22 +1,15 @@
 const about = document.querySelector(".about");
 const btns = document.querySelectorAll(".btn");
 
+about.querySelector("#history").classList.add("active");
+document.querySelector(".btn-container .active").classList.add("active");
+
 about.addEventListener("click", (el) => {
   let id = el.target.dataset.id;
   if (id) {
     btns.forEach((btn) => {
       btn.classList.remove("active");
     });
-
-    if (id != "vision") {
-      let list = document.querySelectorAll(".about-content");
-      list.forEach((el) => {
-        if (el.id != "vision") {
-          listItem = el.querySelector(".about-list");
-          listItem.classList.add("hiddenList");
-        }
-      });
-    }
 
     el.target.classList.add("active");
 

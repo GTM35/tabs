@@ -23,12 +23,6 @@ body {
   padding: 5rem 0;
 }
 
-.hiddenList {
-  display: none;
-}
-
-/* Title Area */
-
 .container-title {
   align-items: center;
   display: flex;
@@ -39,10 +33,10 @@ body {
 
 .container-title h1 {
   color: var(--color-title);
+  font-family: var(--font-family-title);
   font-size: 2.5rem;
   letter-spacing: var(--letter-space);
   margin-bottom: 0.75rem;
-  font-family: var(--font-family-title);
 }
 
 .container-title p {
@@ -50,25 +44,19 @@ body {
   font-size: 1rem;
 }
 
-/* Main area */
-
 main {
   display: grid;
+  column-gap: 2rem;
   grid-template-columns: 1fr 1fr;
   margin: 0 5rem;
-  column-gap: 2rem;
 }
-
-/* Img area  */
 
 .container-img img {
-  width: 100%;
   border-radius: 10px;
-  object-fit: cover;
   height: 20rem;
+  object-fit: cover;
+  width: 100%;
 }
-
-/* About Area */
 
 .about {
   display: grid;
@@ -81,13 +69,13 @@ main {
 }
 
 .btn-container .btn {
-  height: 3rem;
-  border: none;
   background-color: var(--color-bg-button);
+  border: none;
   cursor: pointer;
-  font-size: 1rem;
-  letter-spacing: 4px;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  height: 3rem;
+  letter-spacing: 4px;
   transition: all 0.3s linear;
 }
 
@@ -100,8 +88,8 @@ main {
 }
 
 .btn:hover:not(.active) {
-  background-color: #ebf7ff;
   color: #49a6e9;
+  background-color: #ebf7ff;
 }
 
 .btn.active {
@@ -113,43 +101,49 @@ main {
 }
 
 .about-content {
+  background-color: #fff;
   display: none;
   padding: 2rem 1.5rem;
-  background-color: #fff;
 }
 
 .about-title {
-  font-size: 1rem;
   color: var(--color-title);
-  margin-bottom: 0.75rem;
   font-family: var(--font-family-title);
+  font-size: 1rem;
   letter-spacing: 4px;
+  margin-bottom: 0.75rem;
 }
 
 .about-desc {
-  font-size: 1rem;
   color: var(--color-normal);
+  font-size: 1rem;
   line-height: 1.5rem;
   margin-bottom: 0.75rem;
 }
 
 .about-list li {
-  font-size: 1rem;
   color: var(--color-title);
+  font-size: 1rem;
   list-style: none;
 }
 
-/* mobile */
+.about-list {
+  display: none;
+}
 
-@media screen and (max-width: 320px) {
+.about-content[id="vision"] .about-list {
+  display: block;
+}
+
+@media screen and (max-width: 425px) {
   main {
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    width: 90vw;
-    padding: 0;
     margin: 0 auto;
+    padding: 0;
+    width: 90vw;
   }
 
   .container-title p {
@@ -159,19 +153,16 @@ main {
   }
 
   .container-title h1 {
-    margin-bottom: 0.75rem;
     font-size: 2rem;
+    margin-bottom: 0.75rem;
   }
 
   .container-img {
     margin-bottom: 2rem;
   }
 
+  .about-list li,
   .about-desc {
-    font-size: 0.875rem;
-  }
-
-  .about-list li {
     font-size: 0.875rem;
   }
 }
